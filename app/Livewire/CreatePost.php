@@ -2,9 +2,10 @@
 
 namespace App\Livewire;
 
+use App\Models\Post;
 use Livewire\Component;
-use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Rule;
+use Illuminate\Contracts\View\View;
 
 class CreatePost extends Component
 {
@@ -20,10 +21,10 @@ class CreatePost extends Component
     {
         $this->validate();
 
-        // Post::create([
-        //     'title' => $this->title,
-        //     'body' => $this->body,
-        // ]);
+        Post::create([
+            'title' => $this->title,
+            'body' => $this->body,
+        ]);
 
         $this->success = true;
 
